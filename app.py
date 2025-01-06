@@ -17,8 +17,7 @@ def create_app():
                 issues_data.append(row)
     except FileNotFoundError:
         print("Warning: 'tech_support_dataset' file not found. Defaulting to empty dataset.")
-        # Optionally, you can set some default data or leave issues_data empty
-
+        
     app = Flask(__name__)
     CORS(app)
     @app.route("/")
@@ -36,10 +35,9 @@ def create_app():
         return jsonify({"response": response})
 
     def get_response(user_input):
-        # Check if the user's input matches any issue in the CSV
         issue_response = find_issue_response(user_input)
         if issue_response:
-            return issue_response  # Return response from CSV if matched
+            return issue_response  
         else:
             # If no match is found, generate a response using DialoGPT
             return get_Chat_response(user_input)
