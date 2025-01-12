@@ -4,7 +4,7 @@
 
 #### **1. Clone the Repository**
 ```bash
-git clone https://github.com/sara-nur/Querynaut-Agent.git
+git clone git@github.com:sara-nur/Querynaut-Agent.git
 cd Querynaut-Agent
 ```
 
