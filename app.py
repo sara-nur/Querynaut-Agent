@@ -41,6 +41,8 @@ def create_app():
         else:
             return get_Chat_response(user_input)
 
+
+
     def find_issue_response(user_input):
         best_match = None
         highest_score = 0
@@ -61,7 +63,7 @@ def create_app():
         user_input_words = set(user_input.split())
         issue_description_words = set(issue_description.split())
         common_words = user_input_words.intersection(issue_description_words)
-        return len(common_words) / len(issue_description_words)
+        return len(common_words) / len(issue_description_words) #Jacard Similarity
 
     def generate_technical_response(issue):
         return f" {issue['Tech_Response']}"
